@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('pages.index');
 });
+Route::post('/signin','UserController@signin');
+Route::group(['middleware' => 'auth'],function () {
+    Route::get('/dashboard',array('as' => 'dashboard' , 'uses' => 'RouteController@Dashboard') );
+    Route::get('/admin',array('as' => 'admin' , 'uses' => 'RouteController@admin' ))->middleware(['RoleChecker:admin']);
+    Route::group(["prefix"=>"articles"],function(){
+
+    });
+});

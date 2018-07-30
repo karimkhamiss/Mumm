@@ -15,6 +15,7 @@ class RoleSeeder extends Seeder
             'name' => "Admin",
             'description'=> "Post Articles",
             'permissions' => json_encode([
+                'articles',
                 'categories',
                 'settings'
             ])
@@ -23,6 +24,7 @@ class RoleSeeder extends Seeder
             'name' => "Follower",
             'description'=> "Read Articles and comment",
             'permissions' => json_encode([
+                'articles',
                 'settings'
             ])
         ]);

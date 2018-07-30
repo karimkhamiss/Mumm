@@ -16,7 +16,7 @@ class RouteController extends Controller
     public function dashboard()
     {
         if($this->user->role_id == 1)
-            return redirect('/adminpanel');
+            return redirect('/admin');
         else if($this->user->role_id == 2)
             return redirect('/articles');
         else

@@ -57,5 +57,5 @@
 @endsection
 
 @section('script')
-
+    <script src="{{ asset('Ajax/auth/auth.js') }}"></script>
 @endsection
