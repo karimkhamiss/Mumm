@@ -15,7 +15,19 @@ class CreateArticleCategoriesTable extends Migration
     {
         Schema::create('article_categories', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('article_id')->unsigned();
+            $table->integer('category_id')->unsigned();
+            $table->string('title');
+            $table->string('body');
+            $table->string('cover');
+            $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
+        });
+        Schema::table('article_categories', function(Blueprint  $table)
+        {
+            $table->foreign('article_id')->references('id')->on('articles');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
