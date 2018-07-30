@@ -32,29 +32,28 @@
 @section('title')
     Home
 @endsection
-<header>
-
-    <div class="container">
-        <div class="caption">
-            <div style="padding-left: 120px">
-                <img src="images/logo_white.png"alt="">
-            </div>
-        <h1>Welcome to Our Blog</h1>
-        <p>We care about our clients feedbacks <br>Checkout our daily articles and give us your comments.</p>
-        <div>
-            <button class="yellow-btn">
-                Create Free Account
-            </button>
-            <button class="yellow-btn">
-                Sign in
-            </button>
-        </div>
-        </div>
-    </div>
-</header>
 @section('contents')
-
-
+    @include('forms.auth.signin')
+    @include('forms.auth.signup')
+    <header>
+        <div class="container">
+            <div class="caption">
+                <div style="padding-left: 120px">
+                    <img src="images/logo_white.png"alt="">
+                </div>
+                <h1>Welcome to Our Blog</h1>
+                <p>We care about our clients feedbacks <br>Checkout our daily articles and give us your comments.</p>
+                <div>
+                    <button class="yellow-btn" data-popup="sign-up-popup">
+                        Create Free Account
+                    </button>
+                    <button class="yellow-btn" data-popup="sign-in-popup">
+                        Sign in
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 @endsection
 
 @section('script')
