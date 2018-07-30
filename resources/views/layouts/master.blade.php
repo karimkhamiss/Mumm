@@ -54,12 +54,12 @@
 <!-- start copyright -->
 <footer>
     <div class="container">
-        <div class="fl-left">
-            Bahy Center © 2018
+        <div class="fl-left" style="line-height: 33px">
+            Mumm © 2018
         </div>
         <div class="fl-right">
-            <a class="text-white" target="_blank" href="https://www.facebook.com/bahycenter/"><i class="fab fa-facebook-f"></i></a>
-            <a class="text-white" target="_blank" href="https://www.instagram.com/bahycenter/"><i class="fab fa-instagram"></i></a>
+            <a class="text-white" target="_blank" href="https://www.facebook.com/getmumm/"><i class="fab fa-facebook-f"></i></a>
+            <a class="text-white" target="_blank" href="https://www.instagram.com/getmumm/"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </footer>
