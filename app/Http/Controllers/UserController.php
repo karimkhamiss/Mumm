@@ -32,13 +32,12 @@ class UserController extends Controller
     public function signup(Request $request)
     {
         $this->validate($request, [
-            'id' =>'unique:clients',
             'first_name' => 'required',
             'last_name' => 'required',
             'password' => 'required',
             'username' => 'required|regex:/^[a-z]+[0-9]*$/u|unique:users'
         ]);
-        $data = $request->except('_token','id');
+        $data = $request->except('_token');
         $data['role_id'] = 2;
         $user = User::create($data);
         if($user)
