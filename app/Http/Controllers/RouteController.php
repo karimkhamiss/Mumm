@@ -17,6 +17,12 @@ class RouteController extends Controller
         else
             return redirect('/');
     }
+    public function admin()
+    {
+        return view('pages.admin',[
+            'user' => Auth::user(),
+        ]);
+    }
     public function index()
     {
         return view('pages.index',[

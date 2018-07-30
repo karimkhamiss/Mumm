@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Middleware;
-
 use App\Http\Controllers\Controller;
 use App\Http\Utils\Permission;
-use App\models\Roles;
+use App\Model\Role;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;

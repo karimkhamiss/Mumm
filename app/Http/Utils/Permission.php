@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Http\Utils;
-
-use App\models\Roles;
-
+use App\Model\Role;
 class Permission
 {
     public function CheckPermission($role,$permission)
     {
-        $roles = Roles::all();
+        $roles = Role::all();
         $permissions = $this->Make_Roles($roles);
         foreach ($permissions as $key => $roles)
         {

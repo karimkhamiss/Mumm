@@ -21,7 +21,7 @@ $('#Signin').submit(function (e) {
             if(auth == true) {
                 PrintOnSelector('#Signin>div.alert', "Welcome Back");
                 $("#Signin>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.href = to_go;
                     });
                 });
@@ -47,3 +47,58 @@ $('#Signin').submit(function (e) {
         }
     });
 })
+$('#Signup').submit(function (e) {
+    var button = $('#Signup button[type="submit"]');
+    button_waiting(button);
+    e.preventDefault();
+    $.ajax({
+        url : '/signup',
+        type: 'POST',
+        data: $('#Signup').serialize(),
+        success: function (data) {
+            $("#Signup label.alert").fadeOut();
+            button_done(button);
+            if(data)
+            {
+                alert("ss");
+                PrintOnSelector('#Signup>div.alert', "Account Created Successfully");
+                $("#Signup>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
+                    $(this).delay(500).fadeOut(function () {
+                        location.href = "/dashboard"
+                    });
+                });
+            }
+            else {
+                PrintOnSelector('#Signup>div.alert', "Unexpected Error Come , Please Try Again");
+                $("#Signup>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
+                    $(this).delay(500).fadeOut(function () {
+                        location.reload();
+                    });
+                });
+            }
+        },
+        error:function(data){
+            // reload(data);
+            tellme(data);
+            var error = data.responseJSON;
+            button_done(button);
+            $("#Signup label.alert").addClass("alert-danger").fadeIn();
+            error_handler(
+                error["errors"],
+                [
+                    '#Signup #User_first_name',
+                    '#Signup #User_last_name',
+                    '#Signup #User_username',
+                    '#Signup #User_password'
+                ],
+                [
+                    'first_name',
+                    'last_name',
+                    'username',
+                    'password'
+                ]
+            );
+        }
+    });
+});
+

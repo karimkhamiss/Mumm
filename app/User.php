@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Model\Article;
+use App\Model\Role;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
