@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" media="all">
     @yield('style')
     <link rel="stylesheet" href="{{ asset('css/media.css') }}" media="all">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oregano" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <style>
         .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
         {
@@ -41,96 +40,9 @@
             display: none;
         }
     </style>
-    <style>
-        div.header .notifcation-body
-        {
-            background: #fff !important;
-            color: #0B2232;
-            position: fixed;
-            top: 63px;
-            left: 75px;
-            height: 250px;
-            z-index: 999;
-            padding: 10px;
-            width: 370px;
-            display: none;
-            overflow: scroll;
-        }
-        div.header .notifcation-body li
-        {
-            background: #fafafa;
-            margin-bottom: 10px;
-            padding:10px;
-            position: relative;
-            border-right: 5px solid #e7534b;
-
-        }
-        div.header .notifcation-body li a
-        {
-            color:#0B2232 !important;
-        }
-        div.header .notifcation-body li.unread
-        {
-            background: #eee;
-        }
-        div.header .notifcation-icon
-        {
-            color:#f5f5f5 !important;
-            position: relative;
-
-        }
-        div.header .notifcation-icon span
-        {
-            color: #f5f5f5;
-            background: #e7534b;
-            font-size: 10px;
-            /* width: 12px; */
-            /* height: 12px; */
-            /* line-height: 12px; */
-            text-align: center;
-            position: absolute;
-            top: -5px;
-            right: -10px;
-            padding: 1px 3px;
-            font-weight: 900;
-
-
-        }
-        div.header .notifcation
-        {
-            color:#f5f5f5;
-
-        }
-        div.header .notifcation-body li i
-        {
-            position: absolute;
-            top:5px;
-            left:5px;
-            color:#e7534b;
-            opacity: 0;
-            visibility: hidden;
-            font-size: 18px;
-            cursor: pointer;
-            transition: .4s all ease-in-out;
-            z-index:9999;
-        }
-        div.header .notifcation-body li:hover i
-        {
-            opacity:1;
-            visibility: visible;
-        }
-        tr.now td
-        {
-            background: #ddd;
-            /*color:#fff;*/
-        }
-        tr.now td span{
-            /*color:#fff !important;*/
-        }
-    </style>
     <!-- Css Files -->
     <meta charset="utf-8">
-    <title>Bahy Center - @yield('title')
+    <title>Mumm - @yield('title')
     </title>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
