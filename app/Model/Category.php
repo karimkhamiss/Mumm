@@ -9,8 +9,8 @@ class Category extends Model
     protected $table = 'categories';
     protected $fillable = ['name'];
     protected $dates = ['deleted_at'];
-    public function category_articles()
+    public function articles()
     {
-        return $this->hasMany(ArticleCategory::class);
+        return $this->hasMany(Article::class);
     }
 }
