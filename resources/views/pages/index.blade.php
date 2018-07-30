@@ -11,7 +11,7 @@
         }
         header div.caption
         {
-            padding-top: 150px;
+            padding-top: 220px;
         }
         h1
         {
@@ -19,11 +19,12 @@
         }
         p
         {
-            font-size:19px
+            font-size:20px;
+            line-height: 1.65;
         }
         img
         {
-            margin:20px 0;
+            /*margin:20px 0;*/
         }
     </style>
 @endsection
@@ -32,12 +33,13 @@
     Home
 @endsection
 <header>
-    <div class="text-center">
-    <img src="images/logo_white.png" width="200" alt="">
-    </div>
+
     <div class="container">
         <div class="caption">
-        <h1>Welcome to Mumm Blog</h1>
+            <div style="padding-left: 120px">
+                <img src="images/logo_white.png"alt="">
+            </div>
+        <h1>Welcome to Our Blog</h1>
         <p>We care about our clients feedbacks <br>Checkout our daily articles and give us your comments.</p>
         <div>
             <button class="yellow-btn">
