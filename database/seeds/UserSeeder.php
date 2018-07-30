@@ -11,6 +11,12 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $user = new \App\Model\User();
+        $user->first_name = "Karim";
+        $user->last_name = "Khamiss";
+        $user->password  = bcrypt("karim");
+        $user->username = "karim";
+        $user->role_id = 1;
+        $user->save();
     }
 }
