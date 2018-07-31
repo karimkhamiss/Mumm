@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
@@ -20,5 +21,9 @@ class Article extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+    public function getDateAttribute()
+    {
+        return date("j F , Y",strtotime($this->created_at));
     }
 }

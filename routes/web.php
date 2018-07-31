@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'],function () {
         Route::post('/add','ArticleController@add');
         Route::post('/update','ArticleController@update');
         Route::post('/delete','ArticleController@delete');
+        Route::get('/{id}','ArticleController@profile');
     });
     Route::group(["prefix"=>"comment"],function(){
         Route::post('/add','CommentController@add');

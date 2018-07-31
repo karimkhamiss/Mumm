@@ -11,7 +11,7 @@
         <div>
             @if($user)
             @include('layouts.panelheader')
-        @if($user->role_id == 1)
+                @if($user->role_id == 1 && isset($page))
             @include('layouts.menu')
             @endif
             @endif

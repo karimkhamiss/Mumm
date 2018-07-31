@@ -37,4 +37,17 @@ class ArticleController extends Controller
             else
                 return 0;
     }
+    public function profile($id)
+    {
+        $article = Article::find($id);
+        if ($article) {
+//            $this->generatePDF();
+            return view('pages.article',
+                [
+                    'article' => $article,
+                    'user' => Auth::user()
+                ]);
+        } else
+            return view('errors.404');
+    }
 }
