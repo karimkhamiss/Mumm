@@ -39,6 +39,14 @@ class RouteController extends Controller
             'page' => "admins"
         ]);
     }
+    public function followers()
+    {
+        return view('pages.followers',[
+            'user' => Auth::user(),
+            'followers' => User::where('role_id',2)->orderBy('id','desc')->get(),
+            'page' => "followers"
+        ]);
+    }
     public function articles()
     {
         return view('pages.articles',[

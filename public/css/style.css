@@ -63,6 +63,7 @@
     font-size: 30px;
     padding: 0;
     box-shadow: 0 1px 5px 1px #bbb;
+    z-index: 999;
 }
 .control-panel .section-title
 {
