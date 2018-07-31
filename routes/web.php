@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'],function () {
     Route::get('/categories',array('as' => 'categories' , 'uses' => 'RouteController@categories' ))->middleware(['App\Http\Middleware\RoleChecker:categories']);
     Route::get('/admins',array('as' => 'admins' , 'uses' => 'RouteController@admins' ))->middleware(['App\Http\Middleware\RoleChecker:admins']);
     Route::get('/followers',array('as' => 'followers' , 'uses' => 'RouteController@followers' ))->middleware(['App\Http\Middleware\RoleChecker:followers']);
+    Route::get('/settings',array('as' => 'settings' , 'uses' => 'RouteController@settings' ))->middleware(['App\Http\Middleware\RoleChecker:settings']);
     Route::group(["prefix"=>"articles"],function(){
 
     });

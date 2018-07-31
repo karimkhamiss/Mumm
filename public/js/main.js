@@ -29,12 +29,6 @@ $(document).ready(function() {
         }
 
     });
-    $(".open-control-panel-menu").click(function(){
-        $(".control-panel-menu").fadeIn(400);
-    });
-    $(".control-panel-menu,.control-panel-menu>i").click(function(){
-        $(".control-panel-menu").fadeOut(400);
-    });
     /* popup */
     /* ------------------------------- */
     /* loading */

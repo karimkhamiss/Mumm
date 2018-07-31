@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" media="all">
     @yield('style')
     <link rel="stylesheet" href="{{ asset('css/media.css') }}" media="all">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <style>
         .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
         {
