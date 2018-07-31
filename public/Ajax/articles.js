@@ -1,5 +1,14 @@
 $(function () {
-
+    $("div.filter select[name='category_id']").change(function(){
+        var category_id = $(this).val();
+        var category_name = $("div.filter select[name='category_id'] option[value='"+category_id+"']").text();
+        $(".articles .article .category").each(function(){
+            if ($(this).text().search(new RegExp(category_name, "i")) < 0) {
+                $(this).parent().parent().hide(400);
+            } else {
+                $(this).parent().parent().show(400);
+            }
+        });    });
     $('#AddArticle').submit(function (e) {
         var button = $('#AddArticle button[type="submit"]');
         button_waiting(button);
