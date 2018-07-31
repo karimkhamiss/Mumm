@@ -21,6 +21,7 @@ class RouteController extends Controller
     {
         return view('pages.admin',[
             'user' => Auth::user(),
+            'page' => "admins"
         ]);
     }
     public function index()
@@ -34,6 +35,7 @@ class RouteController extends Controller
         return view('pages.articles',[
             'user' => Auth::user(),
             'articles' => Article::orderBy('id','desc')->get(),
+            'page' => "articles"
         ]);
     }
     public function categories()
@@ -41,12 +43,14 @@ class RouteController extends Controller
         return view('pages.categories',[
             'user' => Auth::user(),
             'categories' => Category::orderBy('id','desc')->get(),
+            'page' => "categories"
         ]);
     }
     public function settings()
     {
         return view('pages.settings',[
             'user' => Auth::user(),
+            'page' => "settings"
         ]);
     }
 

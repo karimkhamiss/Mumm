@@ -1,7 +1,7 @@
 <div class="control-panel-menu">
         <div class="menu-items">
             @if($user->role_id == 1)
-            <a href="{{ URL::route('admins') }}">
+            <a href="{{ URL::route('admins') }}" class=" @if($page == "admins") active @endif">
                 <div class="menu-item text-center">
                 <i class="fa fa-home"></i>
                 <p class="text-dark-grey">
@@ -11,7 +11,7 @@
             </a>
             @endif
             @if($user->role_id == 1)
-            <a href="{{ URL::route('followers') }}">
+            <a href="{{ URL::route('followers') }}" class=" @if($page == "followers") active @endif">
                 <div class="menu-item text-center">
                 <i class="fa fa-home"></i>
                 <p class="text-dark-grey">
@@ -21,7 +21,7 @@
             </a>
             @endif
             @if($user->role_id == 1)
-            <a href="{{ URL::route('categories') }}">
+            <a href="{{ URL::route('categories') }}" class=" @if($page == "categories") active @endif">
                 <div class="menu-item text-center">
                 <i class="fa fa-home"></i>
                 <p class="text-dark-grey">
@@ -31,11 +31,21 @@
             </a>
             @endif
             @if($user->role_id == 1)
-            <a href="{{ URL::route('articles') }}">
+            <a href="{{ URL::route('articles') }}" class=" @if($page == "articles") active @endif">
                 <div class="menu-item text-center">
                 <i class="fa fa-home"></i>
                 <p class="text-dark-grey">
                     Articles
+                </p>
+                </div>
+            </a>
+            @endif
+            @if($user->role_id == 1)
+            <a href="{{ URL::route('settings') }}" class=" @if($page == "settings") active @endif">
+                <div class="menu-item text-center">
+                <i class="fa fa-home"></i>
+                <p class="text-dark-grey">
+                    Settings
                 </p>
                 </div>
             </a>

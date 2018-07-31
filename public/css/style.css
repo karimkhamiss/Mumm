@@ -30,9 +30,10 @@
 {
     text-align: center;
 }
-.control-panel .control-panel-menu .menu-items a:hover
+.control-panel .control-panel-menu .menu-items a.active
 {
     background: #eee;
+    border:2px solid #e4ce09;
 }
 .control-panel .control-panel-menu .menu-items a
 {
