@@ -15,7 +15,6 @@
                     </p>
                     </a>
                 <ul class="dropdown-menu">
-                    <li><a href="/">Home Page</a></li>
                     <li><a href="{{ URL::route('settings') }}">Settings</a></li>
                     <li><a href="{{ URL::route('signout') }}">Signout</a></li>
                 </ul>

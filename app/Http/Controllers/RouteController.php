@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Model\Article;
 use App\Model\Category;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class RouteController extends Controller
@@ -28,6 +29,14 @@ class RouteController extends Controller
     {
         return view('pages.index',[
             'user' => Auth::user(),
+        ]);
+    }
+    public function admins()
+    {
+        return view('pages.admins',[
+            'user' => Auth::user(),
+            'admins' => User::where('role_id',1)->orderBy('id','desc')->get(),
+            'page' => "admins"
         ]);
     }
     public function articles()

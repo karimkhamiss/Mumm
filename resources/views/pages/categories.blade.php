@@ -23,7 +23,7 @@
             <div class="col-md-12 filter" id="Players-Filter"></div>
         </div>
         <div class="clearfix"></div>
-        <div class="col-md-12 box-lg"> <!-- start Pricing table -->
+        <div class="col-md-12 box-lg"> <!-- start Category table -->
             <table id="Players-table" class="text-center list-view">
                 <thead> <!-- main row -->
                 <tr class="info">
@@ -36,14 +36,13 @@
                 <tbody>
                 @foreach($categories as $category)
                     <tr class="danger">
-                        <td id="title">{{$category->title}}</td>
-                        <td id="price">{{$category->price}}</td>
-                        @if($user->role_id == 1 || $user->role_id == 2)
-                            <td>
-                                <i class="fa fa-pencil-alt white UpdatePricingButton" data-id="{{$category->id}}" data-popup="update-category-popup"></i>
-                                <i class="fa fa-times white DeletePricingButton" data-id="{{$category->id}}" data-popup="delete-category-popup"></i>
-                            </td>
-                        @endif
+                        <td id="name">{{$category->name}}</td>
+                        <td id="description">{{$category->description}}</td>
+                        <td>{{sizeof($category->articles)}}</td>
+                        <td>
+                            <i class="fa fa-pencil-alt white UpdateCategoryButton" data-id="{{$category->id}}" data-popup="update-category-popup"></i>
+                            <i class="fa fa-times white DeleteCategoryButton" data-id="{{$category->id}}" data-popup="delete-category-popup"></i>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

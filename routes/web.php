@@ -27,7 +27,14 @@ Route::group(['middleware' => 'auth'],function () {
     Route::get('/admins',array('as' => 'admins' , 'uses' => 'RouteController@admins' ))->middleware(['App\Http\Middleware\RoleChecker:admins']);
     Route::get('/followers',array('as' => 'followers' , 'uses' => 'RouteController@followers' ))->middleware(['App\Http\Middleware\RoleChecker:followers']);
     Route::get('/settings',array('as' => 'settings' , 'uses' => 'RouteController@settings' ))->middleware(['App\Http\Middleware\RoleChecker:settings']);
-    Route::group(["prefix"=>"articles"],function(){
-
+    Route::group(["prefix"=>"category"],function(){
+        Route::post('/add','CategoryController@add');
+        Route::post('/update','CategoryController@update');
+        Route::post('/delete','CategoryController@delete');
+    });
+    Route::group(["prefix"=>"settings"],function(){
+        Route::post('/update/info','SettingController@UpdateInfo');
+        Route::post('/update/picture','SettingController@UpdatePicture');
+        Route::post('/update/password','SettingController@UpdatePassword');
     });
 });

@@ -69,16 +69,13 @@
 <script src="{{ asset('js/jquery-3.1.0.min.js')}}"></script>
 <script src="{{ asset('js/bootstrap.js')}}"></script>
 <script src="{{ asset('js/wow.min.js')}}"></script>
-{{--<script src="{{ asset('js/jquery.nicescroll.min.js')}}"></script>--}}
 <script src="{{ asset('js/jquery-ui.js')}}"></script>
 <script src="{{ asset('Ajax/error_handler.js') }}"></script>
 <script src="{{ asset('js/fileinput.min.js') }}"></script>
-<script src="{{ asset('js/html2canvas.js') }}"></script>
 <!-- DataTables -->
 <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/select.min.js')}}"></script>
-<script src="{{ asset('js/print.js')}}"></script>
 <script src="{{ asset('js/main.js')}}"></script>
 <script>
     new WOW().init();
@@ -103,7 +100,6 @@
         previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
     });
 </script>
-
 <script>
     $(".dataTables_filter input").removeClass("form-control input-sm").
     appendTo("#Players-Filter,#Coaches-Filter,#Absences-Filter");
@@ -114,65 +110,6 @@
 
     $(".dataTables_paginate").detach().appendTo(".pagination");
 </script>
-<script>
-    //    $('input[type=date]').datepicker({
-    //        // Consistent format with the HTML5 picker
-    //        dateFormat: 'yy-mm-dd'
-    //    });
-</script>
-<script>
-    function PrePrint(selector) {
-        HideElement('body *');
-        var item = selector.parent().siblings("div.pdf");
-        item.show();
-        item.find("table").show();
-        item.find("table *").show();
-        HideElement('.ignorepdf');
-        $("body").append(item);
-        document.title = "";
-    }
-    function PostPrint() {
-        location.reload();
-    }
-    $(document).on('click','button.print',function() {
-        PrePrint($(this));
-        print();
-        PostPrint();
-    })
-
-</script>
-{{--<script>--}}
-{{--//    $("button.print").click(function(){--}}
-{{--//        alert("2");--}}
-{{--//        $(".ignorepdf").css("display","none");--}}
-{{--//        var doc = new jsPDF(--}}
-{{--//                {--}}
-{{--//                    orientation: 'landscape',--}}
-{{--//                    format: 'a4'--}}
-{{--//                }--}}
-{{--//        );--}}
-{{--//        var source = $(this).siblings(".pdf")[0];--}}
-{{--//        doc.addHTML(source,function () {--}}
-{{--//            doc.output("dataurlnewwindow");--}}
-{{--//            $(".ignorepdf").css("display","block");--}}
-{{--//            $(".ignorepdf").css("display","grid");--}}
-{{--//        });--}}
-{{--//--}}
-{{--//    });--}}
-{{--</script>--}}
 @yield('script')
-<script>
-    $(".notification-icon").click(function(){
-        $.ajax({
-            url:"/notifications/read",
-            success:function(data){
-                $(".dropdown .number").text(0).fadeOut();
-            },
-            error:function(data){
-                //tellme(data)
-            }
-        });
-    })
-</script>
 </body>
 </html>
