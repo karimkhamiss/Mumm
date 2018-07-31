@@ -19,11 +19,11 @@
             margin: 0;
             margin-right:10px;
             background: none;
-            color:#555;
+            color:#888;
         }
         .article .info span
         {
-            color:#555;
+            color:#888;
             margin: 20px 0;
             margin-right: 15px;
             margin-bottom: 30px;
@@ -80,5 +80,6 @@
 @section('script')
 
     <script src="{{ asset('Ajax/articles.js')}}"></script>
+    <script src="{{ asset('Ajax/comments.js')}}"></script>
 
 @endsection

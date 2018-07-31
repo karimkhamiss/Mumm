@@ -47,8 +47,8 @@ Route::group(['middleware' => 'auth'],function () {
     });
     Route::group(["prefix"=>"comment"],function(){
         Route::post('/add','CommentController@add');
-        Route::post('/update','CommentController@update');
-        Route::post('/delete','CommentController@delete');
+//        Route::post('/update','CommentController@update');
+//        Route::post('/delete','CommentController@delete');
     });
     Route::group(["prefix"=>"settings"],function(){
         Route::post('/update/info','SettingController@UpdateInfo');

@@ -1,4 +1,6 @@
 <form id="AddComment">
+    {!! csrf_field() !!}
+    <input type="hidden" name="article_id" value="{{$article->id}}">
     <div class="col-md-12">
         <textarea name="body" placeholder="Comment"></textarea>
         <label class="alert" id="Comment_body"></label>
