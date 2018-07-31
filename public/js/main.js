@@ -1,6 +1,4 @@
-$(document).ready(function() {
-    /* popup */
-    function closePopup()
+ function closePopup()
     {
         $(".popup").delay(50).fadeOut(300,function(){
             $(".background").fadeOut(300);
@@ -42,4 +40,3 @@ $(document).ready(function() {
     });
 /* loading */
 /* ------------------------------- */
-});

@@ -19,7 +19,7 @@ class CreateArticlesTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->string('title');
             $table->string('body');
-            $table->string('cover');
+            $table->string('cover')->nullable();
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

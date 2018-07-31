@@ -110,3 +110,37 @@ table td a
 {
     color:#8dc73f !important;
 }
+
+.bootstrap-select>.btn
+{
+    text-align: left;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #111;
+    padding: 10px;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 20px;
+    resize: none;
+    border-radius: 2px;
+    transition: .4s all ease-in-out;
+    text-indent: 2px;
+    outline:0 !important;
+    text-transform: none;
+}
+.bootstrap-select>.btn:focus
+{
+    outline:0 !important;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn)
+{
+    width:100%;
+    text-align: left;
+}
+.bootstrap-select.btn-group .btn .filter-option,
+.open>.dropdown-menu
+{
+    text-align: left;
+}

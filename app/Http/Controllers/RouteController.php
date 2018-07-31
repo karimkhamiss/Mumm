@@ -52,6 +52,7 @@ class RouteController extends Controller
         return view('pages.articles',[
             'user' => Auth::user(),
             'articles' => Article::orderBy('id','desc')->get(),
+            'categories' => Category::orderBy('id','desc')->get(),
             'page' => "articles"
         ]);
     }

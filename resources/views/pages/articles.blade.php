@@ -9,6 +9,7 @@
 @endsection
 
 @section('tab')
+    @include('forms.articles.add')
     @if($user->role_id == 1)
         <button class="AddButton" data-popup="add-article-popup">+</button>
     @endif
