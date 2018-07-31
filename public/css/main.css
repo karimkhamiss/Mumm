@@ -117,6 +117,7 @@ button
     text-transform: uppercase;
     font-weight: 600;
     margin: 20px 10px;
+    margin-top: 0;
 }
 button.sm
 {

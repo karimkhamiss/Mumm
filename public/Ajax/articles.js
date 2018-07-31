@@ -19,7 +19,7 @@ $(function () {
                 {
                     PrintOnSelector('#AddArticle>div.alert', "Unexpected Error Come , Please Try Again");
                     $("#AddArticle>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
+                        $(this).delay(500).fadeOut(function () {
                             location.reload();
                         });
                     });
@@ -27,7 +27,13 @@ $(function () {
                 }
                 else {
                     // $(".articles").prepend(data);
-                    closePopup()
+                    // closePopup()
+                    PrintOnSelector('#AddArticle>div.alert', "Article Published Successfully");
+                    $("#AddArticle>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
+                        $(this).delay(500).fadeOut(function () {
+                            location.reload();
+                        });
+                    });
                 }
             },
             error:function(data){reload(data);
