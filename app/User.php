@@ -37,5 +37,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class);
     }
+    public function getNameAttribute()
+    {
+        return $this->first_name." ".$this->last_name;
+    }
 
 }

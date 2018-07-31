@@ -38,6 +38,7 @@ class UserController extends Controller
             'username' => 'required|regex:/^[a-z]+[0-9]*$/u|unique:users'
         ]);
         $data = $request->except('_token');
+        $data['password'] = bcrypt($request->password);
         $data['role_id'] = 2;
         $user = User::create($data);
         if($user)
@@ -53,6 +54,14 @@ class UserController extends Controller
     {
         Auth::logout();
         return redirect('/');
+    }
+    public function delete(Request $request)
+    {
+        $user = User::findOrFail($request->id);
+        if($user->delete())
+            return 1;
+        else
+            return 0;
     }
 
 }
