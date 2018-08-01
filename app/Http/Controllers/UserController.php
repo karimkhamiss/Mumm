@@ -58,6 +58,24 @@ class UserController extends Controller
     public function delete(Request $request)
     {
         $user = User::findOrFail($request->id);
+        if(sizeof($user->comments))
+        {
+            foreach ($user->comments as $comment)
+            {
+                $comment->delete();
+            }
+        }
+        if(sizeof($user->articles))
+        {
+            foreach ($user->articles as $article)
+            {
+                foreach ($article->comments as $comment)
+                {
+                    $comment->delete();
+                }
+                $article->delete();
+            }
+        }
         if($user->delete())
             return 1;
         else

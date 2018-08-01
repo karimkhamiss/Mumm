@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Model\Article;
+use App\Model\Comment;
 use App\Model\Role;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -36,6 +37,10 @@ class User extends Authenticatable
     public function articles()
     {
         return $this->hasMany(Article::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
     public function getNameAttribute()
     {

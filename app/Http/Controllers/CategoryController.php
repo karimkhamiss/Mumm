@@ -34,6 +34,17 @@ class CategoryController extends Controller
     public function delete(Request $request)
     {
         $category = Category::findOrFail($request->id);
+        if(sizeof($category->articles))
+        {
+            foreach ($category->articles as $article)
+            {
+                foreach ($article->comments as $comment)
+                {
+                    $comment->delete();
+                }
+                $article->delete();
+            }
+        }
         if($category->delete())
             return 1;
         else

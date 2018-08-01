@@ -90,7 +90,7 @@ $("#DeleteAdmin").submit(function(e){
 
         },
         error:function(data){reload(data);
-            //tellme(data)
+            tellme(data)
             button_done(button);
             // alert(data['responseText']);
             PrintOnSelector('#DeleteAdmin>div.alert', "Cannot Delete This Admin");
