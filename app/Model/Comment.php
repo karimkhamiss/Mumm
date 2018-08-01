@@ -9,7 +9,7 @@ use DateTime;
 class Comment extends Model
 {
     protected $table = 'comments';
-    protected $fillable = ['article_id', 'name', 'body','user_id'];
+    protected $fillable = ['article_id', 'name', 'body','user_id','visitor_name'];
     protected $dates = ['deleted_at'];
     public function article()
     {

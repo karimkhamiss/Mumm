@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->string('cover')->nullable();
             $table->rememberToken();
             $table->softDeletes();

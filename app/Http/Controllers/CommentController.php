@@ -14,7 +14,15 @@ class CommentController extends Controller
             'body' => 'required',
         ]);
         $data = $request->except('_token');
-        $data['user_id'] = Auth::user()->id;
+        if(Auth::check())
+            $data['user_id'] = Auth::user()->id;
+        else
+        {
+            if(!$data['visitor_name'])
+            {
+                $data['visitor_name'] = "Anonymous";
+            }
+        }
         $comment = Comment::create($data);
         if($comment)
             return 1;

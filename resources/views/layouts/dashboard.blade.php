@@ -9,9 +9,9 @@
 @section('contents')
     <div id="control-panel" class="control-panel"> <!-- Star Control Panel -->
         <div>
-            @if($user)
             @include('layouts.panelheader')
-                @if($user->role_id == 1 && isset($page))
+            @if(\Illuminate\Support\Facades\Auth::check())
+            @if($user->role_id == 1 && isset($page))
             @include('layouts.menu')
             @endif
             @endif
@@ -19,7 +19,6 @@
                 <div class="tab-content">
                     @yield('tab')
                 </div>
-
 
             </div>
         </div>

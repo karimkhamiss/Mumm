@@ -85,6 +85,11 @@
     @include('forms.articles.update')
     @include('forms.articles.delete')
     <div role="tabpanel" class="tab-pane text-center active in" id="article"> <!-- Start tab pricing -->
+        <div class="text-left">
+        <a href="/articles">
+            <button class="yellow-btn">Back to Articles</button>
+        </a>
+        </div>
         <div class="article">
             <div class="article-image">
                 @if($article->cover)
@@ -109,14 +114,18 @@
                         <div class="comment">
                             <div class="comment-head">
                                 <div class="user-photo fl-left">
-                                    @if($comment->user->picture)
+                                    @if($comment->user && $comment->user->picture)
                                         <img src="{{$comment->user->picture}}" alt="">
                                     @else
                                         <img src="{{asset('images/user.jpg')}}" alt="">
                                     @endif
                                 </div>
                                 <div class="user-name fl-left">
+                                    @if($comment->user)
                                     {{$comment->user->name}}
+                                    @else
+                                    {{$comment->visitor_name}}
+                                    @endif
                                 </div>
                                 <div class="date fl-right">
                                     {{$comment->date}}

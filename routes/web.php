@@ -18,11 +18,15 @@ Route::get('/login',['as'=>'login',function () {
 }]);
 Route::post('/signin', [ 'as' => 'signin', 'uses' => 'UserController@signin']);
 Route::post('/signup','UserController@signup');
+Route::get('/articles',array('as' => 'articles' , 'uses' => 'RouteController@articles' ));
+Route::get('/article/{id}','ArticleController@profile');
+Route::group(["prefix"=>"comment"],function(){
+    Route::post('/add','CommentController@add');
+});
 Route::group(['middleware' => 'auth'],function () {
     Route::get('/signout',array('as' => 'signout' ,'uses' => 'UserController@signout'));
     Route::get('/dashboard',array('as' => 'dashboard' , 'uses' => 'RouteController@Dashboard') );
     Route::get('/admin',array('as' => 'admin' , 'uses' => 'RouteController@admin' ))->middleware(['App\Http\Middleware\RoleChecker:admin']);
-    Route::get('/articles',array('as' => 'articles' , 'uses' => 'RouteController@articles' ))->middleware(['App\Http\Middleware\RoleChecker:articles']);
     Route::get('/categories',array('as' => 'categories' , 'uses' => 'RouteController@categories' ))->middleware(['App\Http\Middleware\RoleChecker:categories']);
     Route::get('/admins',array('as' => 'admins' , 'uses' => 'RouteController@admins' ))->middleware(['App\Http\Middleware\RoleChecker:admins']);
     Route::get('/followers',array('as' => 'followers' , 'uses' => 'RouteController@followers' ))->middleware(['App\Http\Middleware\RoleChecker:followers']);
@@ -43,12 +47,6 @@ Route::group(['middleware' => 'auth'],function () {
         Route::post('/add','ArticleController@add');
         Route::post('/update','ArticleController@update');
         Route::post('/delete','ArticleController@delete');
-        Route::get('/{id}','ArticleController@profile');
-    });
-    Route::group(["prefix"=>"comment"],function(){
-        Route::post('/add','CommentController@add');
-//        Route::post('/update','CommentController@update');
-//        Route::post('/delete','CommentController@delete');
     });
     Route::group(["prefix"=>"settings"],function(){
         Route::post('/update/info','SettingController@UpdateInfo');

@@ -38,10 +38,7 @@
     <header>
         <div class="container">
             <div class="caption">
-                <div style="padding-left: 120px">
-                    <img src="images/logo_white.png"alt="">
-                </div>
-                <h1>Welcome to Our Blog</h1>
+                <h1>Welcome to MUMM Blog</h1>
                 <p>We care about our clients feedbacks <br>Checkout our daily articles and give us your comments.</p>
                 <div>
                     <button class="yellow-btn" data-popup="sign-up-popup">
@@ -50,6 +47,13 @@
                     <button class="yellow-btn" data-popup="sign-in-popup">
                         Sign in
                     </button>
+                </div>
+                <div>
+                    <a href="/articles">
+                    <button style="margin-left: 45px;" class="yellow-btn">
+                        Try Without Registration?
+                    </button>
+                    </a>
                 </div>
             </div>
         </div>

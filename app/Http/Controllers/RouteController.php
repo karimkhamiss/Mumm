@@ -10,13 +10,14 @@ class RouteController extends Controller
 {
     public function dashboard()
     {
-        $user = Auth::user();
-        if($user->role_id == 1)
-            return redirect('/admin');
-        else if($user->role_id == 2)
-            return redirect('/articles');
-        else
-            return redirect('/');
+//        $user = Auth::user();
+//        if($user->role_id == 1)
+//            return redirect('/articles');
+//        else if($user->role_id == 2)
+//            return redirect('/articles');
+//        else
+//            return redirect('/articles');
+        return redirect('/articles');
     }
     public function admin()
     {

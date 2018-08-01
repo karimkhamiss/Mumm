@@ -7,7 +7,7 @@ $('#AddComment').submit(function (e) {
         type: 'POST',
         data: $('#AddComment').serialize(),
         success: function (data) {
-            // alert(data);
+            alert(data);
             $("#AddComment label.alert").fadeOut();
             button_done(button);
             if(data == 1)
