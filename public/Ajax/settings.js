@@ -8,21 +8,20 @@ $(function () {
             type:"POST",
             data : $("#UpdateInfo").serialize(),
             success:function(data){
-                alert(data);
                 button_done(button);
                 $("#UpdateInfo label.alert").fadeOut();
                 if(data == 1)
                 {
                     PrintOnSelector('#UpdateInfo>div.alert', "Data Updated Successfully");
                     $("#UpdateInfo>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
+                        $(this).delay(500).fadeOut(function () {
                             location.reload();
                         });
                     });
                 }
                 else {
                     $("#UpdateInfo>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
+                        $(this).delay(500).fadeOut(function () {
                             location.reload();
                         });
                     });
@@ -30,14 +29,15 @@ $(function () {
 
 
             },
-            error:function(data){reload(data);
-            tellme(data)
+            error:function(data){
+                reload(data);
+            // tellme(data)
                 button_done(button);
                 // alert(data['responseText']);
                 var error = data.responseJSON;
                 $("#UpdateInfo label.alert").addClass("alert-danger").fadeIn();
                 error_handler(
-                    error,
+                    error["errors"],
                     [
                         '#UpdateInfo #User_first_name',
                         '#UpdateInfo #User_last_name',
@@ -70,7 +70,7 @@ $(function () {
                 {
                     PrintOnSelector('#UpdatePicture>div.alert', "Data Updated Successfully");
                     $("#UpdatePicture>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
+                        $(this).delay(500).fadeOut(function () {
                             location.reload();
                         });
                     });
@@ -84,7 +84,7 @@ $(function () {
                 else {
                     PrintOnSelector('#UpdatePicture>div.alert', "Unexpected Error Come , Please Try Again");
                     $("#UpdatePicture>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
+                        $(this).delay(500).fadeOut(function () {
                             location.reload();
                         });
                     });
@@ -98,7 +98,7 @@ $(function () {
                 var error = data.responseJSON;
                 $("#UpdatePicture label.alert").addClass("alert-danger").fadeIn();
                 error_handler(
-                    error,
+                    error["errors"],
                     [
                         '#UpdatePicture #User_picture',
 
@@ -127,7 +127,7 @@ $(function () {
                 {
                     PrintOnSelector('#UpdatePassword>div.alert', "Data Updated Successfully");
                     $("#UpdatePassword>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
+                        $(this).delay(500).fadeOut(function () {
                             location.reload();
                         });
                     });
@@ -140,7 +140,7 @@ $(function () {
                 else {
                     PrintOnSelector('#UpdatePassword>div.alert', "Unexpected Error Come , Please Try Again");
                     $("#UpdatePassword>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
+                        $(this).delay(500).fadeOut(function () {
                             location.reload();
                         });
                     });
@@ -154,7 +154,7 @@ $(function () {
                 var error = data.responseJSON;
                 $("#UpdatePassword label.alert").addClass("alert-danger").fadeIn();
                 error_handler(
-                    error,
+                    error["errors"],
                     [
                         '#UpdatePassword #User_old_password',
                         '#UpdatePassword #User_password',

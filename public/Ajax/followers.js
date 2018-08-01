@@ -20,7 +20,7 @@ $("#DeleteFollower").submit(function(e){
             {
                 PrintOnSelector('#DeleteFollower>div.alert', "Follower Deleted Successfully");
                 $("#DeleteFollower>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -28,7 +28,7 @@ $("#DeleteFollower").submit(function(e){
             else {
                 PrintOnSelector('#DeleteFollower>div.alert', "Unexpected Error Come , Please Try Again");
                 $("#DeleteFollower>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -42,7 +42,7 @@ $("#DeleteFollower").submit(function(e){
             // alert(data['responseText']);
             PrintOnSelector('#DeleteFollower>div.alert', "Cannot Delete This Follower");
             $("#DeleteFollower>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                $(this).delay(1000).fadeOut(function () {
+                $(this).delay(500).fadeOut(function () {
                     location.reload();
                 });
             });

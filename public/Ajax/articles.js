@@ -46,12 +46,12 @@ $(function () {
                 }
             },
             error:function(data){reload(data);
-            tellme(data)
+            // tellme(data)
                 var error = data.responseJSON;
                 button_done(button);
                 $("#AddArticle label.alert").removeClass("alert-success").addClass("alert-danger").fadeIn();
                 error_handler(
-                    error,
+                    error['errors'],
                     [
                         '#AddArticle #Article_title',
                         '#AddArticle #Article_body',

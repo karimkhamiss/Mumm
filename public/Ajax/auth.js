@@ -33,7 +33,8 @@ $('#Signin').submit(function (e) {
             }
         },
         error:function (data) {
-            tellme(data);
+            reload(data);
+            // tellme(data);
             button_done(button);
             $("#Signin label.alert").addClass("alert-danger").fadeIn();
             var error = data.responseJSON;
@@ -60,7 +61,6 @@ $('#Signup').submit(function (e) {
             button_done(button);
             if(data)
             {
-                alert("ss");
                 PrintOnSelector('#Signup>div.alert', "Account Created Successfully");
                 $("#Signup>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
                     $(this).delay(500).fadeOut(function () {
@@ -78,8 +78,8 @@ $('#Signup').submit(function (e) {
             }
         },
         error:function(data){
-            // reload(data);
-            tellme(data);
+            reload(data);
+            // tellme(data);
             var error = data.responseJSON;
             button_done(button);
             $("#Signup label.alert").addClass("alert-danger").fadeIn();

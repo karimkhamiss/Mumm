@@ -33,8 +33,12 @@
 }
 .control-panel .control-panel-menu .menu-items a.active
 {
-    background: #eee;
-    border:2px solid #e4ce09;
+    background: #e4ce09;
+}
+.control-panel .control-panel-menu .menu-items a.active i
+{
+    background: #fff;
+    color:#111;
 }
 .control-panel .control-panel-menu .menu-items a
 {
@@ -54,8 +58,8 @@
 .control-panel .tab-content .AddButton
 {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 40px;
+    right: 40px;
     background: #e4ce09;
     width: 60px;
     height: 60px;

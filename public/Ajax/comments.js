@@ -7,7 +7,6 @@ $('#AddComment').submit(function (e) {
         type: 'POST',
         data: $('#AddComment').serialize(),
         success: function (data) {
-            alert(data);
             $("#AddComment label.alert").fadeOut();
             button_done(button);
             if(data == 1)
@@ -22,15 +21,15 @@ $('#AddComment').submit(function (e) {
             else {
                 PrintOnSelector('#AddComment>div.alert', "Unexpected Error Come , Please Try Again");
                 $("#AddComment>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
             }
         },
         error:function(data){
-            // reload(data);
-            tellme(data)
+            reload(data);
+            // tellme(data)
             var error = data.responseJSON;
             button_done(button);
             $("#AddComment label.alert").addClass("alert-danger").fadeIn();

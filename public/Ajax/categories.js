@@ -14,7 +14,7 @@ $('#AddCategory').submit(function (e) {
             {
                 PrintOnSelector('#AddCategory>div.alert', "Added Successfully");
                 $("#AddCategory>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -22,15 +22,15 @@ $('#AddCategory').submit(function (e) {
             else {
                 PrintOnSelector('#AddCategory>div.alert', "Unexpected Error Come , Please Try Again");
                 $("#AddCategory>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
             }
         },
         error:function(data){
-            // reload(data);
-            tellme(data)
+            reload(data);
+            // tellme(data)
             var error = data.responseJSON;
             button_done(button);
             $("#AddCategory label.alert").addClass("alert-danger").fadeIn();
@@ -69,7 +69,7 @@ $("#UpdateCategory").submit(function(e){
             {
                 PrintOnSelector('#UpdateCategory>div.alert', "Updated Successfully");
                 $("#UpdateCategory>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -77,7 +77,7 @@ $("#UpdateCategory").submit(function(e){
             else {
                 PrintOnSelector('#UpdateCategory>div.alert', "Unexpected Error Come , Please Try Again");
                 $("#UpdateCategory>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -122,7 +122,7 @@ $("#DeleteCategory").submit(function(e){
             {
                 PrintOnSelector('#DeleteCategory>div.alert', "Deleted Successfully");
                 $("#DeleteCategory>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -130,7 +130,7 @@ $("#DeleteCategory").submit(function(e){
             else {
                 PrintOnSelector('#DeleteCategory>div.alert', "Unexpected Error Come , Please Try Again");
                 $("#DeleteCategory>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -138,13 +138,14 @@ $("#DeleteCategory").submit(function(e){
 
 
         },
-        error:function(data){reload(data);
+        error:function(data){
+            reload(data);
             //tellme(data)
             button_done(button);
             // alert(data['responseText']);
             PrintOnSelector('#DeleteCategory>div.alert', "Cannot Delete This Category");
             $("#DeleteCategory>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                $(this).delay(1000).fadeOut(function () {
+                $(this).delay(500).fadeOut(function () {
                     location.reload();
                 });
             });

@@ -28,8 +28,8 @@ $('#AddAdmin').submit(function (e) {
             }
         },
         error:function(data){
-            // reload(data);
-            tellme(data);
+            reload(data);
+            // tellme(data);
             var error = data.responseJSON;
             button_done(button);
             $("#AddAdmin label.alert").addClass("alert-danger").fadeIn();
@@ -73,7 +73,7 @@ $("#DeleteAdmin").submit(function(e){
             {
                 PrintOnSelector('#DeleteAdmin>div.alert', "Admin Deleted Successfully");
                 $("#DeleteAdmin>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -81,7 +81,7 @@ $("#DeleteAdmin").submit(function(e){
             else {
                 PrintOnSelector('#DeleteAdmin>div.alert', "Unexpected Error Come , Please Try Again");
                 $("#DeleteAdmin>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
+                    $(this).delay(500).fadeOut(function () {
                         location.reload();
                     });
                 });
@@ -95,7 +95,7 @@ $("#DeleteAdmin").submit(function(e){
             // alert(data['responseText']);
             PrintOnSelector('#DeleteAdmin>div.alert', "Cannot Delete This Admin");
             $("#DeleteAdmin>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                $(this).delay(1000).fadeOut(function () {
+                $(this).delay(500).fadeOut(function () {
                     location.reload();
                 });
             });
